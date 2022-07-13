@@ -1,0 +1,54 @@
+
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="index.html"><span class="color-b">LOGO</span></a>
+
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En ventas</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let onSale of onSales" class="dropdown-item " href="#">{{onSale}}</a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En alquiler</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let onRent of onRents" class="dropdown-item " href="#">{{onRent}}</a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En alquiler</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let onRent of onRents" class="dropdown-item " href="#">{{onRent}}</a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hipoteca</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let mortgage of mortgages" class="dropdown-item " href="#">{{mortgage}}</a>
+
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Necesito ayuda</a>
+            <div class="dropdown-menu">
+              <a *ngFor="let help of needHelp" class="dropdown-item " href="#">{{help}}</a>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="btn btn-success">Ver siguiente</button>
+
+    </div>
+  </nav>
