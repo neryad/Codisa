@@ -70,105 +70,101 @@
     </div>
     <div class="property-info">
       <div class="property-details">
-        <h2>Aprtamento vello</h2>
+        <h2>{{properties.title}}</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Exercitationem sunt accusamus consequatur voluptate ipsa eum
-          assumenda, unde rem quod voluptatem?
+          {{properties.address}}
         </p>
       </div>
       <div class="card location">h</div>
       <div class="price">
-        <h2>100,000</h2>
+     <h2>{{properties.price | currency}}</h2>
       </div>
     </div>
 
     <div class="property-description">
-      <h2>dexcription</h2>
+      <h2>Descripción</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quos
-        ratione modi expedita, illum nobis neque exercitationem voluptas
-        deserunt eius!
+        {{properties.description}}
       </p>
     </div>
     <hr />
     <div class="property-description">
-      <h2>Detalles de la propierdad</h2>
+      <h2>Detalles de la propiedad</h2>
       <div class="details">
-        <div class="details1">
+        <div class="details-descriptions">
           <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Tipo de propiedad:</p>
+            <p>{{properties.features.propertyType}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Niveles:</p>
+            <p>{{properties.features.levels}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Tamaño de lote:</p>
+              <p>{{properties.features.lotSize | number}} M2</p>
           </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>hola a todos</p>
-          </div>
+
         </div>
-        <div class="details2">
+        <div class="details-descriptions">
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Cochera</p>
+              <p>{{properties.features.garage}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Habitaciones</p>
+              <p>{{properties.features.rooms}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Baño</p>
+              <p>{{properties.features.bathrooms}}</p>
           </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>hola a todos</p>
-          </div>
+
         </div>
-        <div class="details3">
+        <div class="details-descriptions">
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Aire acondicionado</p>
+              <p>{{properties.features.airConditioner}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Terraza</p>
+              <p>{{properties.features.terrace}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Jardín</p>
+              <p>{{properties.features.garage}}</p>
           </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>hola a todos</p>
-          </div>
+
         </div>
-        <div class="details4">
+        <div class="details-descriptions">
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Cuarto de servicio</p>
+              <p>{{properties.features.serviceRoom}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
+            <p>Bodega</p>
+              <p>{{properties.features.warehouse}}</p>
           </div>
             <div class="icons1">
             <i>1</i>
-            <p>hola a todos</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>hola a todos</p>
+            <p>Seguridad</p>
+              <p>{{properties.features.security}}</p>
           </div>
         </div>
       </div>
     </div>
+    <hr>
       <button type="button" class="btn btn-success">Ver siguiente</button>
   </div>
 </main>

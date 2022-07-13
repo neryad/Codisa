@@ -1,0 +1,21 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 90%; */
+    align-items: center;
+}
+
+.property-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.details-descriptions{
+  display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+}
