@@ -1,90 +1,32 @@
 <app-navbar></app-navbar>
-<main>
-  <div class="container">
-    <!-- <div class="row">
-          <div class="col-md-12">
-            <div class="title-wrap d-flex justify-content-between">
-              <div class="title-box">
-                <h2 class="title-a">Latest Properties</h2>
-              </div>
-              <div class="title-link">
-                <a href="property-grid.html">All Property
-                  <span class="bi bi-chevron-right"></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
+<main>
+  <div *ngIf="property" class="container">
     <div class="card-box-a card-shadow">
       <div class="img-box-a">
-        <img
-          src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyamin-mellish-106399.jpg&fm=jpg"
-          alt=""
-          class="img-a img-fluid"
-        />
-      </div>
-      <div class="card-overlay">
-        <div class="card-overlay-a-content">
-          <div class="card-header-a">
-            <h2 class="card-title-a">
-              <a href="property-single.html"
-                >206 Mount <br />
-                Olive Road Two</a
-              >
-            </h2>
-          </div>
-          <div class="card-body-a">
-            <div class="price-box d-flex">
-              <span class="price-a">rent | $ 12.000</span>
-            </div>
-            <a href="#" class="link-a"
-              >Click here to view
-              <span class="bi bi-chevron-right"></span>
-            </a>
-          </div>
-          <!-- <div class="card-footer-a">
-                      <ul class="card-info d-flex justify-content-around">
-                        <li>
-                          <h4 class="card-info-title">Area</h4>
-                          <span>340m
-                            <sup>2</sup>
-                          </span>
-                        </li>
-                        <li>
-                          <h4 class="card-info-title">Beds</h4>
-                          <span>2</span>
-                        </li>
-                        <li>
-                          <h4 class="card-info-title">Baths</h4>
-                          <span>4</span>
-                        </li>
-                        <li>
-                          <h4 class="card-info-title">Garages</h4>
-                          <span>1</span>
-                        </li>
-                      </ul>
-                    </div> -->
-        </div>
+        <img [src]="currentPropertyImg" alt="" class="img-a img-fluid" />
       </div>
     </div>
+    <br />
     <div class="property-info">
       <div class="property-details">
-        <h2>{{properties.title}}</h2>
+        <h2>{{ property.title }}</h2>
         <p>
-          {{properties.address}}
+          {{ property.address }}
         </p>
       </div>
-      <div class="card location">h</div>
+      <button (click)="viewOnMap(property)" class="btn btn-outline-info">
+        Ver en mapa
+      </button>
       <div class="price">
-     <h2>{{properties.price | currency}}</h2>
+        <h2>{{ property.price | currency }}</h2>
       </div>
     </div>
 
     <div class="property-description">
       <h2>Descripción</h2>
       <p>
-        {{properties.description}}
+        {{ property.description }}
       </p>
     </div>
     <hr />
@@ -93,78 +35,116 @@
       <div class="details">
         <div class="details-descriptions">
           <div class="icons1">
-            <i>1</i>
-            <p>Tipo de propiedad:</p>
-            <p>{{properties.features.propertyType}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Niveles:</p>
-            <p>{{properties.features.levels}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Tamaño de lote:</p>
-              <p>{{properties.features.lotSize | number}} M2</p>
-          </div>
+            <div class="iconstitle">
+              <i class="fa-solid fa-building"></i>
+              <p>Tipo de propiedad:</p>
+            </div>
 
+            <p>{{ property.features.propertyType }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-arrow-turn-up"></i>
+              <p>Niveles:</p>
+            </div>
+            <p>{{ property.features.levels }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <p>Tamaño de lote:</p>
+            </div>
+
+            <p>{{ property.features.lotSize | number }} M2</p>
+          </div>
         </div>
         <div class="details-descriptions">
-            <div class="icons1">
-            <i>1</i>
-            <p>Cochera</p>
-              <p>{{properties.features.garage}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Habitaciones</p>
-              <p>{{properties.features.rooms}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Baño</p>
-              <p>{{properties.features.bathrooms}}</p>
-          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-car"></i>
+              <p>Cochera</p>
+            </div>
 
+            <p>{{ property.features.garage }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-bed"></i>
+              <p>Habitaciones</p>
+            </div>
+
+            <p>{{ property.features.rooms }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-shower"></i>
+              <p>Baño</p>
+            </div>
+
+            <p>{{ property.features.bathrooms }}</p>
+          </div>
         </div>
         <div class="details-descriptions">
-            <div class="icons1">
-            <i>1</i>
-            <p>Aire acondicionado</p>
-              <p>{{properties.features.airConditioner}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Terraza</p>
-              <p>{{properties.features.terrace}}</p>
-          </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Jardín</p>
-              <p>{{properties.features.garage}}</p>
-          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-regular fa-snowflake"></i>
+              <p>Aire acondicionado</p>
+            </div>
 
+            <p>{{ property.features.airConditioner }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-umbrella-beach"></i>
+              <p>Terraza</p>
+            </div>
+
+            <p>{{ property.features.terrace }}</p>
+          </div>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-leaf"></i>
+              <p>Jardín</p>
+            </div>
+
+            <p>{{ property.features.garden }}</p>
+          </div>
         </div>
         <div class="details-descriptions">
-            <div class="icons1">
-            <i>1</i>
-            <p>Cuarto de servicio</p>
-              <p>{{properties.features.serviceRoom}}</p>
+          <div class="icons1">
+            <div class="iconstitle">
+              <p>Cuarto de servicio</p>
+              <i class="fa-solid fa-paintbrush"></i>
+            </div>
+
+            <p>{{ property.features.serviceRoom }}</p>
           </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Bodega</p>
-              <p>{{properties.features.warehouse}}</p>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-boxes-stacked"></i>
+              <p>Bodega</p>
+            </div>
+
+            <p>{{ property.features.warehouse }}</p>
           </div>
-            <div class="icons1">
-            <i>1</i>
-            <p>Seguridad</p>
-              <p>{{properties.features.security}}</p>
+          <div class="icons1">
+            <div class="iconstitle">
+              <i class="fa-solid fa-user-shield"></i>
+              <p>Seguridad</p>
+            </div>
+
+            <p>{{ property.features.security }}</p>
           </div>
         </div>
       </div>
     </div>
-    <hr>
-      <button type="button" class="btn btn-success">Ver siguiente</button>
+    <hr />
+    <button
+      (click)="nextProperty(currentProperty)"
+      type="button"
+      class="btn btn-success"
+    >
+      Ver siguiente
+    </button>
   </div>
 </main>

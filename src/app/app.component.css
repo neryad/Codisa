@@ -19,3 +19,23 @@
     width: 80%;
     align-items: center;
 }
+.icons1{
+
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    justify-content: space-between;
+}
+
+.iconstitle{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    /* margin: 0px 0px; */
+}
+
+.iconstitle p {
+
+    margin-left: .5rem;
+}
